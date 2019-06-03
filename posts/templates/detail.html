@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+<section>
+<main>
+     <div class="col s12 m7">
+    <h2 class="header">{{ post.title }}</h2>
+    <div class="card horizontal">
+         {% if post.image %}
+        <div class="card-image">
+        <img src="{{ post.image}}">
+      </div>
+            {% endif %}
+      <div class="card-stacked">
+        <div class="card-content">
+         {% if post.categories.all %}
+            <h6> <strong>Categories:</strong></h6>
+            {% for category in post.categories.all %}
+            <span>{{ category.name }}</span>
+            {% endfor %}
+            {% endif %}
+            <h6> <strong>Text:</strong></h6>
+          <p>{{ post.text }}</p>
+
+        </div>
+        <div class="card-action">
+        <p class="author"> Author: {{ post.owner.username }} -  Posted: {{ post.publication_date }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</main>
+
+</section>
+{% endblock %}

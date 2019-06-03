@@ -1,0 +1,16 @@
+# Entornos virtuales
+env/
+venv/
+
+# Pycharn & VSCode
+.idea/
+.vscode/
+
+# SQLite
+*.sqlite3
+
+# Django environment
+.env
+
+*/__pycache__/
+*/*/__pycache__/

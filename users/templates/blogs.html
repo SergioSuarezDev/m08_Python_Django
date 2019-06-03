@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+<div class="container">
+
+{% block main_title %} Blogs {% endblock %}
+{% block main_content %}
+
+
+<ul class="collection">
+        <ul class="list">
+
+    {% for user in object_list %}
+        <a href="{% url 'user_blog' user.username %}">
+            <li class="waves-effect">
+        <div class="valign-wrapper">
+          <i class="material-icons left circle blue-text">folder</i>
+            <h5 class="collection-item">{{ user }}'s blog</h5>
+        </div>
+      </li>
+        </a><br/>
+
+    {% endfor %}
+  </ul>
+{% endblock %}
+
+</div>

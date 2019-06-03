@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block main_title %} New post {% endblock %}
+{% block main_content %}
+
+ {% if messages %}
+        {% for message in messages %}
+        <p class="error">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="waves-effect waves-light btn" type="submit">Save</button>
+    </form>
+
+{% endblock %}
